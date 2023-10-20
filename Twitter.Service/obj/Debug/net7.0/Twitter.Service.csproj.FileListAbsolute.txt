@@ -1,0 +1,17 @@
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\bin\Debug\net7.0\Twitter.Service.deps.json
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\bin\Debug\net7.0\Twitter.Service.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\bin\Debug\net7.0\Twitter.Service.pdb
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\bin\Debug\net7.0\Twitter.Domain.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\bin\Debug\net7.0\Twitter.Repository.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\bin\Debug\net7.0\Twitter.Repository.pdb
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\bin\Debug\net7.0\Twitter.Domain.pdb
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\Twitter.Service.csproj.AssemblyReference.cache
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\Twitter.Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\Twitter.Service.AssemblyInfoInputs.cache
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\Twitter.Service.AssemblyInfo.cs
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\Twitter.Service.csproj.CoreCompileInputs.cache
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\Twitter.Service.csproj.CopyComplete
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\Twitter.Service.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\refint\Twitter.Service.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\Twitter.Service.pdb
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Service\obj\Debug\net7.0\ref\Twitter.Service.dll

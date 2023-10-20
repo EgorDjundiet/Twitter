@@ -1,0 +1,12 @@
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\bin\Debug\net7.0\Twitter.Domain.deps.json
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\bin\Debug\net7.0\Twitter.Domain.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\bin\Debug\net7.0\Twitter.Domain.pdb
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\Twitter.Domain.csproj.AssemblyReference.cache
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\Twitter.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\Twitter.Domain.AssemblyInfoInputs.cache
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\Twitter.Domain.AssemblyInfo.cs
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\Twitter.Domain.csproj.CoreCompileInputs.cache
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\Twitter.Domain.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\refint\Twitter.Domain.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\Twitter.Domain.pdb
+E:\repos\My programs\ASP.NET\Twitter\Twitter.Domain\obj\Debug\net7.0\ref\Twitter.Domain.dll
