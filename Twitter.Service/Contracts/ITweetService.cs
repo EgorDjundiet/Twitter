@@ -1,6 +1,6 @@
 ﻿using Twitter.Domain.Models;
-using Twitter.Domain.ModelsForCreation;
-using Twitter.Domain.ModelsForUpdating;
+using Twitter.Domain.CreatedModels;
+using Twitter.Domain.UpdatedModels;
 
 namespace Twitter.Service.Contracts
 {
@@ -8,8 +8,8 @@ namespace Twitter.Service.Contracts
     {
         Task<IEnumerable<Tweet>> GetAll();
         Task<Tweet> GetById(Guid id);
-        Task<Tweet> Create(TweetForCreationDto tweet);
-        Task Update(Guid id, TweetForUpdatingDto tweet);
+        Task<Tweet> Create(CreatedTweet tweet);
+        Task Update(Guid id, UpdatedTweet tweet);
         Task Delete(Guid id);
     }
 }

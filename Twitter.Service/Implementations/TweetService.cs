@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
+using Twitter.Domain.Exceptions;
 using Twitter.Domain.Models;
-using Twitter.Domain.ModelsForCreation;
-using Twitter.Domain.ModelsForUpdating;
+using Twitter.Domain.CreatedModels;
+using Twitter.Domain.UpdatedModels;
 using Twitter.Repository.Contracts;
 using Twitter.Service.Contracts;
 
@@ -11,13 +12,19 @@ namespace Twitter.Service.Implementations
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public TweetService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IValidatorWrapper _validator;
+        public TweetService(IUnitOfWork unitOfWork, IMapper mapper, IValidatorWrapper validator)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _validator = validator;
         }
-        public async Task<Tweet> Create(TweetForCreationDto tweet)
+        public async Task<Tweet> Create(CreatedTweet tweet)
         {
+            var validationResult = _validator.CreatedTweetValidator.Validate(tweet);
+            if (!validationResult.IsValid)
+                throw new ValidationException(validationResult.Errors.Select(e => e.ErrorMessage));
+            
             var tweetEntity = new Tweet();
             _mapper.Map(tweet, tweetEntity);
             await _unitOfWork.TweetRepository.Create(tweetEntity);
@@ -38,12 +45,16 @@ namespace Twitter.Service.Implementations
         {
             var tweet = await _unitOfWork.TweetRepository.GetById(id);
             if (tweet is null)
-                throw new Exception();
+                throw new NotFoundException($"Tweet with id {id} is not found");
             return tweet;
         }
 
-        public async Task Update(Guid id, TweetForUpdatingDto tweet)
+        public async Task Update(Guid id, UpdatedTweet tweet)
         {
+            var validationResult = _validator.UpdatedTweetValidator.Validate(tweet);
+            if (!validationResult.IsValid)
+                throw new ValidationException(validationResult.Errors.Select(e => e.ErrorMessage));
+            
             var tweetEntity = await GetById(id);
             _mapper.Map(tweet, tweetEntity);
             await _unitOfWork.TweetRepository.Update(tweetEntity);

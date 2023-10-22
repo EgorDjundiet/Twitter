@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "z8a5FC/eBauaEXfy4diJK0x4LyR/3YoxSn9Mwwy+mh7J7ZPgVQREP38dSsa5+MYy9eInpBUI+AjQ8FOVD7ZAUw==",
+  "dgSpecHash": "USIj69FxENiAgsbYogeDmYr80amyhzHasN75bZDz7zqMI4dFwVBg9Cx5RJ2M/T/9aycz9mw6WYGw+WD3sy2iWg==",
   "success": true,
   "projectFilePath": "E:\\repos\\My programs\\ASP.NET\\Twitter\\Twitter.Service\\Twitter.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alex\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "E9eH6XoTKkChA54zORosA/36LZSC8Bx9iySSpSbo0qwH17R/SnXT7GKEx+lO81lecTARNcA8pGzlDLlwkYnENA==",
+  "dgSpecHash": "ETKtYpV5u3K3M1MBs0xHFWXK5AyI5Yysj9YUyPmsCEZSH/g+1Wb1af6dSP2V+UWE2iFKvgborVZZU4JG6R58Iw==",
   "success": true,
   "projectFilePath": "E:\\repos\\My programs\\ASP.NET\\Twitter\\Twitter\\Twitter.WebAPI.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Alex\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

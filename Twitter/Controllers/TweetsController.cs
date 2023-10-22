@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Twitter.Domain.ModelsForCreation;
-using Twitter.Domain.ModelsForUpdating;
+using Twitter.Domain.CreatedModels;
+using Twitter.Domain.UpdatedModels;
 using Twitter.Service.Contracts;
 
 namespace Twitter.WebAPI.Controllers
@@ -28,13 +28,13 @@ namespace Twitter.WebAPI.Controllers
             return Ok(tweet);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody]TweetForCreationDto tweet)
+        public async Task<IActionResult> Create([FromBody]CreatedTweet tweet)
         {
             var tweetEntity = await _serviceManager.TweetService.Create(tweet);
             return CreatedAtRoute("GetTweetById", new {id = tweetEntity.Id}, tweetEntity);
         }
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody]TweetForUpdatingDto tweet)
+        public async Task<IActionResult> Update(Guid id, [FromBody]UpdatedTweet tweet)
         {
             await _serviceManager.TweetService.Update(id, tweet);
             return NoContent();

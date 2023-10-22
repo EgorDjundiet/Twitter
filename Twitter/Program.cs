@@ -4,7 +4,7 @@ using Twitter.Repository.Contracts;
 using Twitter.Repository.Implementations;
 using Twitter.Service.Contracts;
 using Twitter.Service.Implementations;
-using Twitter.WebAPI.Extensions;
+using Twitter.WebAPI.Middlewares;
 
 namespace Twitter
 {
@@ -17,11 +17,12 @@ namespace Twitter
             builder.Services.AddScoped<RepositoryErrorFlag>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IServiceManager, ServiceManager>();
+            builder.Services.AddScoped<IValidatorWrapper, ValidatorWrapper>();
             builder.Services.AddAutoMapper(typeof(Service.MappingProfile));
             builder.Services.AddDbContext<RepositoryContext>(opts =>
                 opts.UseSqlServer(builder.Configuration.GetConnectionString("mainConnection")));
             var app = builder.Build();
-            app.ConfigureExceptionMiddleware();
+            app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseHttpsRedirection();
             app.MapControllers();
             app.Run();

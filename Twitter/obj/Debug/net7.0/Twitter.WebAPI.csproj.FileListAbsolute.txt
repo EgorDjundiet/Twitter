@@ -76,3 +76,4 @@ E:\repos\My programs\ASP.NET\Twitter\Twitter\bin\Debug\net7.0\Microsoft.EntityFr
 E:\repos\My programs\ASP.NET\Twitter\Twitter\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 E:\repos\My programs\ASP.NET\Twitter\Twitter\bin\Debug\net7.0\Mono.TextTemplating.dll
 E:\repos\My programs\ASP.NET\Twitter\Twitter\bin\Debug\net7.0\System.CodeDom.dll
+E:\repos\My programs\ASP.NET\Twitter\Twitter\bin\Debug\net7.0\FluentValidation.dll
