@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Twitter.Domain.Models;
-using Twitter.Repository.Configuration;
 
 namespace Twitter.Repository
 {
@@ -15,7 +14,6 @@ namespace Twitter.Repository
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new TweetConfiguration());
         }
     }
 }
