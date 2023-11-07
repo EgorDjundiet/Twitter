@@ -3,5 +3,6 @@
     public interface IUnitOfWork
     {
         ITweetRepository TweetRepository { get; }
+        IAuthorRepository AuthorRepository { get; }
     }
 }

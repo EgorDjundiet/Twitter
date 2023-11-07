@@ -8,5 +8,7 @@ namespace Twitter.Service.Contracts
     {
         AbstractValidator<CreatedTweet> CreatedTweetValidator { get; }
         AbstractValidator<UpdatedTweet> UpdatedTweetValidator { get; }
+        AbstractValidator<CreatedAuthor> CreatedAuthorValidator { get; }
+        AbstractValidator<UpdatedAuthor> UpdatedAuthorValidator { get; }
     }
 }

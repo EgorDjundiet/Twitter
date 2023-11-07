@@ -10,14 +10,22 @@ namespace Twitter.Service.Implementations
     {
         private readonly AbstractValidator<CreatedTweet> _createdTweetValidator;
         private readonly AbstractValidator<UpdatedTweet> _updatedTweetValidator;
+        private readonly AbstractValidator<CreatedAuthor> _createdAuthorValidator; 
+        private readonly AbstractValidator<UpdatedAuthor> _updatedAuthorValidator;
         public ValidatorWrapper()
         {
             _createdTweetValidator = new CreatedTweetValidator();
             _updatedTweetValidator = new UpdatedTweetValidator();
+            _createdAuthorValidator = new CreatedAuthorValidator();
+            _updatedAuthorValidator = new UpdatedAuthorValidator();
         }
 
         public AbstractValidator<CreatedTweet> CreatedTweetValidator => _createdTweetValidator;
 
         public AbstractValidator<UpdatedTweet> UpdatedTweetValidator => _updatedTweetValidator;
+
+        public AbstractValidator<CreatedAuthor> CreatedAuthorValidator => _createdAuthorValidator;
+
+        public AbstractValidator<UpdatedAuthor> UpdatedAuthorValidator => _updatedAuthorValidator;
     }
 }

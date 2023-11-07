@@ -12,8 +12,8 @@ using Twitter.Repository;
 namespace Twitter.WebAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20231028043553_Initial")]
-    partial class Initial
+    [Migration("20231029042909_AddTweetsAndAuthors")]
+    partial class AddTweetsAndAuthors
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,59 @@ namespace Twitter.WebAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Twitter.Domain.Models.Author", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Bio")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountFollowers")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CountFollowing")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Handle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("JoinDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Thumbnail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Website")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Authors");
+                });
 
             modelBuilder.Entity("Twitter.Domain.Models.Media", b =>
                 {
@@ -74,6 +127,20 @@ namespace Twitter.WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("AuthorHandle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("AuthorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AuthorName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorProfilePicture")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CountLikes")
                         .HasColumnType("int");
 
@@ -100,6 +167,8 @@ namespace Twitter.WebAPI.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AuthorId");
+
                     b.ToTable("Tweets");
                 });
 
@@ -115,6 +184,19 @@ namespace Twitter.WebAPI.Migrations
                     b.HasOne("Twitter.Domain.Models.Tweet", null)
                         .WithMany("PollItems")
                         .HasForeignKey("TweetId");
+                });
+
+            modelBuilder.Entity("Twitter.Domain.Models.Tweet", b =>
+                {
+                    b.HasOne("Twitter.Domain.Models.Author", null)
+                        .WithMany("Tweets")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.SetNull);
+                });
+
+            modelBuilder.Entity("Twitter.Domain.Models.Author", b =>
+                {
+                    b.Navigation("Tweets");
                 });
 
             modelBuilder.Entity("Twitter.Domain.Models.Tweet", b =>

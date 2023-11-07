@@ -24,13 +24,13 @@ namespace Twitter.Repository.Implementations
 
         public async Task<IEnumerable<Tweet>> GetAll()
         {
-            var tweets = await _repositoryContext.Tweets.ToListAsync();
+            var tweets = await _repositoryContext.Tweets.Include(t => t.Medias).Include(t => t.PollItems).ToListAsync();
             return tweets;
         }
 
         public async Task<Tweet?> GetById(Guid id)
         {
-            var tweet = await _repositoryContext.Tweets.Where(x => x.Id == id).SingleOrDefaultAsync();
+            var tweet = await _repositoryContext.Tweets.Include(t => t.Medias).Include(t => t.PollItems).Where(x => x.Id == id).SingleOrDefaultAsync();
             return tweet;
         }
 

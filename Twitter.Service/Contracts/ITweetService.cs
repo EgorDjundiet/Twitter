@@ -8,8 +8,8 @@ namespace Twitter.Service.Contracts
     {
         Task<IEnumerable<Tweet>> GetAll();
         Task<Tweet> GetById(Guid id);
-        Task<Tweet> Create(CreatedTweet tweet);
-        Task Update(Guid id, UpdatedTweet tweet);
-        Task Delete(Guid id);
+        Task<Tweet> Create(Guid authorId, CreatedTweet tweet);
+        Task Update(Guid authorId, Guid id, UpdatedTweet tweet);
+        Task Delete(Guid authorId, Guid id);
     }
 }

@@ -6,11 +6,35 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Twitter.WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class AddTweetsAndAuthors : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Authors",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Thumbnail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Handle = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Website = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    JoinDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CountFollowing = table.Column<int>(type: "int", nullable: false),
+                    CountFollowers = table.Column<int>(type: "int", nullable: false),
+                    Category = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Authors", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Tweets",
                 columns: table => new
@@ -23,11 +47,21 @@ namespace Twitter.WebAPI.Migrations
                     CountReplies = table.Column<int>(type: "int", nullable: false),
                     CountReposts = table.Column<int>(type: "int", nullable: false),
                     CountLikes = table.Column<int>(type: "int", nullable: false),
-                    CountViews = table.Column<int>(type: "int", nullable: false)
+                    CountViews = table.Column<int>(type: "int", nullable: false),
+                    AuthorName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AuthorHandle = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AuthorProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AuthorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tweets", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Tweets_Authors_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Authors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,6 +110,11 @@ namespace Twitter.WebAPI.Migrations
                 name: "IX_PollItems_TweetId",
                 table: "PollItems",
                 column: "TweetId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tweets_AuthorId",
+                table: "Tweets",
+                column: "AuthorId");
         }
 
         /// <inheritdoc />
@@ -89,6 +128,9 @@ namespace Twitter.WebAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "Tweets");
+
+            migrationBuilder.DropTable(
+                name: "Authors");
         }
     }
 }

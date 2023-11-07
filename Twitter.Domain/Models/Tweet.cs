@@ -20,5 +20,8 @@
         public int CountLikes { get; set; }
 
         public int CountViews { get; set; }
+        public string AuthorName { get; set; } = string.Empty;
+        public string AuthorHandle { get; set; } = string.Empty;
+        public string? AuthorProfilePicture { get; set; }
     }
 }
